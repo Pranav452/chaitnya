@@ -12,7 +12,7 @@ type QuizQuestion = { question: string; options: string[]; correctAnswer: number
 
 // Simulated backend API
 const api = {
-  login: async (_username: string, _password: string) => {
+  login: async () => {
     await new Promise(resolve => setTimeout(resolve, 1000));
     return { success: true, token: 'fake_token' };
   },
@@ -175,7 +175,7 @@ export default function EnhancedLearningPlatform() {
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const result = await api.login(username, password);
+    const result = await api.login();
     if (result.success) {
       setIsLoggedIn(true);
       setCurrentView('home');
