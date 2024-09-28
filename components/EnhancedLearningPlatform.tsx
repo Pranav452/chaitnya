@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, MessageCircle, Book, Code, Award, User, LogOut, Github, Cpu, Database } from 'lucide-react';
+import { Sun, Moon, MessageCircle, Book, Code, Award, User, LogOut, Cpu, Database } from 'lucide-react';
 
 // Add type definitions
 type Language = 'HTML' | 'CSS' | 'JavaScript' | 'Python' | 'Ruby';
@@ -12,7 +12,7 @@ type QuizQuestion = { question: string; options: string[]; correctAnswer: number
 
 // Simulated backend API
 const api = {
-  login: async (username: string, password: string) => {
+  login: async (_username: string, _password: string) => {
     await new Promise(resolve => setTimeout(resolve, 1000));
     return { success: true, token: 'fake_token' };
   },
